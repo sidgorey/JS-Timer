@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>asdasda</title>
+</head>
+
+<body  style="background-image:  url(1.jpg) !important;background-repeat: no-repeat;background-size: 100% 100%;min-height: 060px" >
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<style type="text/css">
+	button{
+		height: 150px !important;
+		width: 100px !important;
+		border-width: 0 !important;
+		font-size: 50px !important;
+	}
+	
+	
+	.btn-group{
+		margin-top: 30% !important;
+	}
+
+	html {
+   margin: 0px;
+   height: 100%;
+   width: 100%;
+}
+
+body {
+   margin: 0px;
+   min-height: 100%;
+   width: 100%;
+}
+</style>
+
+
+<div class="row"  style="height:100% !important">
+	<div class="col-md-4"></div>
+	<div class="col-md-6">
+		<div class="btn-group btn-group-lg">
+
+		<button type="button" class="btn btn-default min_msb">0</button>
+		<button type="button" class="btn btn-default min_lsb">0</button>
+
+		<button type="button" class="btn btn-default" >:</button>
+
+		<button type="button" class="btn btn-default sec_msb">0</button>
+		<button type="button" class="btn btn-default sec_lsb">0</button>
+
+
+
+		</div>
+	</div>
+</div>
+<div class="row" style="heigth:f"></div>
+
+<script type="text/javascript">
+	
+var flagfin=0;
+			
+			//var par=document.getElementById("lala");
+			var min_msb=document.getElementsByClassName("min_msb")[0];
+			var min_lsb=document.getElementsByClassName("min_lsb")[0];
+			var sec_msb=document.getElementsByClassName("sec_msb")[0];
+			var sec_lsb=document.getElementsByClassName("sec_lsb")[0];
+//			par.innerHTML="lala";
+		var max_mins=15;
+		var divs=max_mins*60;
+		var mins=0;
+		var secs=0;
+		function rec(){
+		//for(var i=0;i<divs;i++)
+		//{
+			if(divs==1)
+			{
+				var t2=window.setTimeout(soundplay,1000);
+
+				return;
+			}
+			
+			//par.innerHTML=divs+"";
+
+
+			divs-=1;
+			mins=Math.floor(divs/60);
+			secs=divs%60;
+			var min_ms=Math.floor(mins/10);
+			var min_ls=mins%10;
+
+			var sec_ms=Math.floor(secs/10);
+			var sec_ls=secs%10;
+			
+
+			//par.innerHTML=mins+":"+secs+"";
+			min_msb.innerHTML=min_ms+"";
+			min_lsb.innerHTML=min_ls+"";
+			sec_msb.innerHTML=sec_ms+"";
+			sec_lsb.innerHTML=sec_ls+"";
+			if(divs>0)
+				var t=window.setTimeout(rec,1000);
+		//}
+	}
+	rec();
+	 var snd = new Audio("beep.wav"); // buffers automatically when created
+
+function soundplay(){
+	snd.play();
+}
+
+	
+	
+</script>
+
+
+
+</body>
+</html>
